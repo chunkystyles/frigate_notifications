@@ -1,0 +1,20 @@
+ntfy:
+  topic: frigate
+  tags:
+    car: car
+    person: walking
+  grouping:
+    enabled: true
+    minutes: 5
+frigate:
+  snapshot:
+    options:
+      bbox: 1
+      timestamp: 1
+      crop: 1
+      h: 480
+      quality: 90
+  mqtt:
+    topic: frigate/events
+logger:
+  timezone: America/New_York

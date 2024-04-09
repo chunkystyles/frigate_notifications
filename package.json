@@ -1,0 +1,30 @@
+{
+  "name": "frigate_notifications",
+  "version": "1.0.0",
+  "description": "A small app to send notifications to ntfy when frigate detects objects.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chunkystyles/frigate_notifications.git"
+  },
+  "keywords": [
+    "frigate",
+    "ntfy"
+  ],
+  "author": "Allen Archer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chunkystyles/frigate_notifications/issues"
+  },
+  "homepage": "https://github.com/chunkystyles/frigate_notifications#readme",
+  "dependencies": {
+    "mqtt": "^5.5.0",
+    "node-fetch": "^3.3.2",
+    "winston": "^3.13.0",
+    "yaml": "^2.4.1"
+  },
+  "type": "module"
+}
