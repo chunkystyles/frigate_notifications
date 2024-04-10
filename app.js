@@ -74,7 +74,7 @@ function sendFrigateNotification(camera, label, id) {
   if (config.ntfy.grouping.enabled) {
     const now = new Date();
     if (lastNotificationDate) {
-      const diff = lastNotificationDate - now;
+      const diff = now - lastNotificationDate
       const diffMinutes = Math.floor(diff / 60000);
       if (diffMinutes >= config.ntfy.grouping.minutes) {
         lastNotificationDate = now;
@@ -88,13 +88,13 @@ function sendFrigateNotification(camera, label, id) {
   const options = {
     method: 'POST',
     headers: {
-      'Title': `${capitalizeFirstLetter(label)} ${capitalizeFirstLetter(camera)}`,
+      'Title': capitalizeFirstLetter(label),
       'Attach': `${secrets.frigate.url}/api/events/${id}/snapshot.jpg${formatSnapshotOptions()}`,
       'Click': `${secrets.frigate.url}/api/events/${id}/clip.mp4`,
       'Tags': config.ntfy.tags[label],
       'Priority': priority,
     },
-    body: ''
+    body: capitalizeFirstLetter(camera)
   };
   fetch(`${secrets.ntfy.url}/${config.ntfy.topic}`, options)
       .then()
